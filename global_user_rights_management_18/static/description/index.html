@@ -1,145 +1,458 @@
-<section class="oe_container">
-    <div class="oe_row" style="text-align:center;">
-        <img src="banner.png" alt="Access Rights Studio by Future Pilot"
-             style="max-width:100%; border-radius:12px;"/>
-    </div>
-</section>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Access Rights Studio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+          rel="stylesheet"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
+    <style>
+        :root {
+            --primary-color: #7c3aed;
+            --bg-white: #fff;
+            --text-color: #121212;
+            --text-color-light: #64728f;
+        }
 
-<section class="oe_container">
-    <div class="oe_row oe_spaced" style="text-align:center; padding:32px 0;">
-        <h1 style="margin:0; font-size:42px; color:#1f2937;">Access Rights Studio</h1>
-        <h3 style="margin-top:8px; font-weight:400; color:#6b7280;">
-            Centralized access control for roles, menus, fields, records and actions
-        </h3>
-        <p style="margin-top:16px;">
-            <span style="background:#714B67; color:#fff; padding:6px 14px;
-                         border-radius:20px; font-size:13px;">Odoo 18.0</span>
-            &#160;
-            <span style="background:#10b981; color:#fff; padding:6px 14px;
-                         border-radius:20px; font-size:13px;">Native security sync</span>
-        </p>
-    </div>
-</section>
+        body {
+            font-family: "Montserrat", sans-serif;
+        }
 
-<section class="oe_container">
-    <div class="oe_row" style="max-width:900px; margin:0 auto; padding:24px;
-                               background:#f9fafb; border-radius:12px;">
-        <h2 style="text-align:center; color:#1f2937;">One place to manage every permission</h2>
-        <p style="text-align:center; color:#4b5563; font-size:16px; line-height:1.6;">
-            Access Rights Studio gives administrators a single, structured workspace to
-            control who can see and do what in Odoo. Every setting stays in sync with
-            Odoo's native security engine &mdash; groups, access rights, record rules and
-            menu visibility &mdash; while field-level restrictions and a full audit trail
-            live in a dedicated layer.
-        </p>
-    </div>
-</section>
+        .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+            color: #121212;
+            font-family: Montserrat;
+            font-size: 16px !important;
+            font-weight: 500 !important;
+            border-radius: 30px;
+            line-height: normal;
+            text-transform: capitalize;
+            background-color: #F5F5F5;
+            border: none;
+            margin-bottom: 0;
+            padding: 12px 24px;
+        }
 
-<section class="oe_container">
-    <h2 style="text-align:center; color:#1f2937; margin-top:48px;">Key Features</h2>
-    <div class="oe_row" style="max-width:960px; margin:0 auto; display:flex;
-                               flex-wrap:wrap; justify-content:center;">
+        .nav-tabs .nav-link {
+            border: none;
+            color: #121212;
+            font-weight: 500;
+            font-size: 16px;
+            padding: 12px 24px;
+        }
 
-        <div style="width:280px; margin:14px; padding:20px; background:#fff;
-                    border:1px solid #e5e7eb; border-radius:10px;">
-            <h4 style="color:#714B67;">Roles &amp; User Rules</h4>
-            <p style="color:#4b5563;">Build reusable roles backed by native security
-                groups, or grant one-off permissions directly to a user.</p>
+        .nav-tabs .nav-link:focus, .nav-tabs .nav-link:hover {
+            border-color: transparent;
+            isolation: isolate;
+        }
+
+        .nav-tabs .nav-link:focus-visible {
+            border-color: transparent;
+            box-shadow: none;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="my-5">
+        <!-- version support -->
+        <div class="my-3 d-flex align-items-center justify-content-end">
+            <div class="text-center"
+                 style="background-color:#017E84 !important; font-size:0.8rem !important; color:#fff !important; font-weight:500 !important; padding:4px !important; margin:0 3px !important; border-radius:50px !important; min-width:120px !important">
+                Community
+            </div>
+            <div class="text-center"
+                 style="background-color:#875A7B !important; color:#fff !important; font-size:0.8rem !important; font-weight:500 !important; padding:4px !important; margin:0 3px !important; border-radius:50px !important; min-width:120px !important">
+                Enterprise
+            </div>
+            <div class="text-center"
+                 style="background-color:#7C7BAD !important; color:#fff !important; font-size:0.8rem !important; font-weight:500 !important; padding:4px !important; margin:0 3px !important; border-radius:50px !important; min-width:120px !important">
+                Odoo.sh
+            </div>
         </div>
 
-        <div style="width:280px; margin:14px; padding:20px; background:#fff;
-                    border:1px solid #e5e7eb; border-radius:10px;">
-            <h4 style="color:#714B67;">Model Access (CRUD)</h4>
-            <p style="color:#4b5563;">Set read, write, create and delete rights per model
-                with clear, centralized control.</p>
+        <!-- hero -->
+        <div class="position-relative"
+             style="border-radius: 16px; background: #f8f8f8; padding: 20px 0;">
+            <div class="row" style="padding: 2rem 0rem 0 !important;">
+                <div class="col-lg-8 mx-auto gap-4 d-flex flex-column align-items-center">
+                    <p class="my-1 text-center text-uppercase"
+                       style="letter-spacing: 4px !important; color: #7c3aed; font-weight: 600; text-align: center; font-size: 14px; line-height: 15.96px;">
+                        Centralized Access Control For Odoo
+                    </p>
+                    <h1 class="text-center text-uppercase my-0"
+                        style="color: #121212; font-size: 46px; font-weight: 700; line-height: normal;">
+                        Access Rights Studio
+                    </h1>
+                </div>
+                <div class="col-lg-12 d-flex justify-content-center align-items-center"
+                     style="margin: 2rem 0;">
+                    <img src="futurepilot.jpeg" width="100%" height="auto"
+                         style="width: 30%; border-radius: 16px;"
+                         class="img-responsive"/>
+                </div>
+                <div class="col-md-12 text-center">
+                    <a href="mailto:futurepilot222@gmail.com" target="_blank"
+                       style="background-color: transparent; border-radius: 35px; font-family: Montserrat; display: inline-block; padding: 7px 33px; border: 1px solid #7c3aed; color: #7c3aed; text-decoration: none;"
+                       class="mx-1 mb-2">
+                        <i class="fa-solid fa-envelope" style="font-size:18px;"></i>
+                        <span class="ps-2" style="font-size: 16px; vertical-align: middle">Email Us</span>
+                    </a>
+                </div>
+                <div class="d-flex justify-content-center mt-4">
+                    <img src="s1.png" class="w-100"
+                         style="z-index: 3; height: auto; border-radius: 10px;">
+                </div>
+            </div>
         </div>
 
-        <div style="width:280px; margin:14px; padding:20px; background:#fff;
-                    border:1px solid #e5e7eb; border-radius:10px;">
-            <h4 style="color:#714B67;">Action Controls</h4>
-            <p style="color:#4b5563;">Allow or block export, import, print, archive, share
-                and duplicate actions.</p>
+        <!-- key highlights -->
+        <div style="border-radius: 16px; padding: 60px 40px; border: 1px solid #EBEEF2; background: #F5F5F7; box-shadow: 0px 5px 20px -11px rgba(0, 0, 0, 0.25); margin-top: 2rem;">
+            <div class="row">
+                <div class="col-lg-12 d-flex flex-column justify-content-center align-items-center">
+                    <h2 style="color: #121212; text-align: center; font-size: 40px; font-weight: 700; text-transform: uppercase; padding-bottom: 50px;">
+                        Key Highlights</h2>
+                </div>
+                <div class="col-lg-4">
+                    <div class="mb-4 d-flex flex-column justify-content-center gap-3"
+                         style="border-radius: 12px; border: 1px solid #B6BCCD; background: #FFF; padding:32px; height:100%;">
+                        <div class="d-flex justify-content-center align-items-center"
+                             style="background-color:#7c3aed !important; border-radius:8px !important; height:42px; width:42px">
+                            <i class="fa-solid fa-user-shield" style="color:#fff; font-size:20px;"></i>
+                        </div>
+                        <h5 class="m-0" style="color:#000 !important; font-weight:bold">
+                            Roles &amp; Direct User Rules</h5>
+                        <p class="m-0" style="color:#64728f; font-size: 16px; font-weight: 400;">
+                            Reusable roles backed by native security groups.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="mb-4 d-flex flex-column justify-content-center gap-3"
+                         style="border-radius: 12px; border: 1px solid #B6BCCD; background: #FFF; padding:32px; height:100%;">
+                        <div class="d-flex justify-content-center align-items-center"
+                             style="background-color:#7c3aed !important; border-radius:8px !important; height:42px; width:42px">
+                            <i class="fa-solid fa-sliders" style="color:#fff; font-size:20px;"></i>
+                        </div>
+                        <h5 class="m-0" style="color:#000 !important; font-weight:bold">
+                            Field, Menu &amp; Record Control</h5>
+                        <p class="m-0" style="color:#64728f; font-size: 16px; font-weight: 400;">
+                            Granular control over every layer of access.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="mb-4 d-flex flex-column justify-content-center gap-3"
+                         style="border-radius: 12px; border: 1px solid #B6BCCD; background: #FFF; padding:32px; height:100%;">
+                        <div class="d-flex justify-content-center align-items-center"
+                             style="background-color:#7c3aed !important; border-radius:8px !important; height:42px; width:42px">
+                            <i class="fa-solid fa-clipboard-list" style="color:#fff; font-size:20px;"></i>
+                        </div>
+                        <h5 class="m-0" style="color:#000 !important; font-weight:bold">
+                            Full Audit Log</h5>
+                        <p class="m-0" style="color:#64728f; font-size: 16px; font-weight: 400;">
+                            Every permission change tracked for compliance.</p>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <div style="width:280px; margin:14px; padding:20px; background:#fff;
-                    border:1px solid #e5e7eb; border-radius:10px;">
-            <h4 style="color:#714B67;">Menu Visibility</h4>
-            <p style="color:#4b5563;">Show or hide menus by role or user so each person
-                sees only what they need.</p>
+        <!-- contact banner -->
+        <div class="my-5">
+            <div class="position-relative"
+                 style="padding: 5rem 4rem; background-color: #0A1425; border-radius: 12px;">
+                <div class="d-flex flex-column gap-4">
+                    <span style="font-size: 40px; font-weight: 700; color: #fff; line-height: 60px; text-transform: capitalize; max-width: 450px; font-family: Montserrat;">Access Rights Studio</span>
+                    <h3 style="font-size: 20px; font-weight: 400; color: #fff; line-height: 32px;">
+                        Ready to take full control of your Odoo security?
+                        <br> Get started now!
+                    </h3>
+                    <div class="d-flex gap-3 flex-wrap">
+                        <a href="mailto:futurepilot222@gmail.com" style="cursor: pointer; border-radius: 16px; display: flex; justify-content: center; align-items: center; gap: 7px; border: 1px solid #ffffff33; background-color: #ffffff14; backdrop-filter: blur(10px); color: #fff; padding: 12px 16px; text-decoration: none;">
+                            <span style="border-radius: 12px; background-color: #ffffff1a; padding: 12px;">
+                                <i class="fa-solid fa-envelope" style="color:#fff;"></i>
+                            </span>
+                            <span style="font-weight: 500; font-family: Montserrat;">futurepilot222@gmail.com</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <div style="width:280px; margin:14px; padding:20px; background:#fff;
-                    border:1px solid #e5e7eb; border-radius:10px;">
-            <h4 style="color:#714B67;">Field-Level Security</h4>
-            <p style="color:#4b5563;">Restrict read and write access on individual fields,
-                enforced on top of Odoo.</p>
+        <!-- tabs: screenshots / features / releases -->
+        <div class="mb-4 bg-white"
+             style="border: 1px solid #EBEEF2; border-radius: 6px; box-shadow: 0px 8px 20px -4px rgba(0, 0, 0, 0.10);">
+            <div>
+                <ul class="nav nav-tabs justify-content-center bg-white py-2"
+                    id="myTab" role="tablist" style="border-radius: 6px 6px 0 0;">
+                    <li class="nav-item">
+                        <a class="nav-link active" data-bs-toggle="tab" href="#overview"
+                           id="overview-tab" role="tab" aria-controls="overview"
+                           aria-selected="true">Screenshots</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="tab" href="#feature"
+                           id="feature-tab" role="tab" aria-controls="feature"
+                           aria-selected="false">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="tab" href="#releases"
+                           id="releases-tab" role="tab" aria-controls="releases"
+                           aria-selected="false">Releases</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="tab-content p-md-5 p-2 py-3" id="myTabContent">
+
+                <!-- screenshots -->
+                <div class="tab-pane fade show active" id="overview" role="tabpanel"
+                     aria-labelledby="overview-tab">
+                    <div class="position-relative mb-4" style="border-radius:10px; background-color:#f4f4f4">
+                        <div class="p-md-5 p-3">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h1 style="font-weight:700; line-height:120%; text-align:center; text-transform:capitalize; font-size: 40px;">
+                                        <span style="color:#121212;">Roles &amp; </span>
+                                        <span style="color: #7c3aed;">Security Groups</span>
+                                    </h1>
+                                </div>
+                                <div class="col-md-12 text-center">
+                                    <div class="d-inline-block p-3 shadow-sm" style="background-color:#fff; border-radius:10px">
+                                        <img alt="Roles" class="img-fluid" loading="lazy" src="s2.png">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="position-relative mb-4" style="border-radius:10px; background-color:#f4f4f4">
+                        <div class="p-md-5 p-3">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h1 style="font-weight:700; line-height:120%; text-align:center; text-transform:capitalize; font-size: 40px;">
+                                        <span style="color:#121212;">User </span>
+                                        <span style="color: #7c3aed;">Permissions</span>
+                                    </h1>
+                                </div>
+                                <div class="col-md-12 text-center">
+                                    <div class="d-inline-block p-3 shadow-sm" style="background-color:#fff; border-radius:10px">
+                                        <img alt="User Permissions" class="img-fluid" loading="lazy" src="s3.png">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="position-relative mb-4" style="border-radius:10px; background-color:#f4f4f4">
+                        <div class="p-md-5 p-3">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h1 style="font-weight:700; line-height:120%; text-align:center; text-transform:capitalize; font-size: 40px;">
+                                        <span style="color:#121212;">Menu </span>
+                                        <span style="color: #7c3aed;">Permissions</span>
+                                    </h1>
+                                </div>
+                                <div class="col-md-12 text-center">
+                                    <div class="d-inline-block p-3 shadow-sm" style="background-color:#fff; border-radius:10px">
+                                        <img alt="Menu Permissions" class="img-fluid" loading="lazy" src="s4.png">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="position-relative mb-4" style="border-radius:10px; background-color:#f4f4f4">
+                        <div class="p-md-5 p-3">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h1 style="font-weight:700; line-height:120%; text-align:center; text-transform:capitalize; font-size: 40px;">
+                                        <span style="color:#121212;">Field </span>
+                                        <span style="color: #7c3aed;">Permissions</span>
+                                    </h1>
+                                </div>
+                                <div class="col-md-12 text-center">
+                                    <div class="d-inline-block p-3 shadow-sm" style="background-color:#fff; border-radius:10px">
+                                        <img alt="Field Permissions" class="img-fluid" loading="lazy" src="s5.png">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="position-relative mb-4" style="border-radius:10px; background-color:#f4f4f4">
+                        <div class="p-md-5 p-3">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h1 style="font-weight:700; line-height:120%; text-align:center; text-transform:capitalize; font-size: 40px;">
+                                        <span style="color:#121212;">Record </span>
+                                        <span style="color: #7c3aed;">Rules</span>
+                                    </h1>
+                                </div>
+                                <div class="col-md-12 text-center">
+                                    <div class="d-inline-block p-3 shadow-sm" style="background-color:#fff; border-radius:10px">
+                                        <img alt="Record Rules" class="img-fluid" loading="lazy" src="s6.png">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="position-relative mb-4" style="border-radius:10px; background-color:#f4f4f4">
+                        <div class="p-md-5 p-3">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h1 style="font-weight:700; line-height:120%; text-align:center; text-transform:capitalize; font-size: 40px;">
+                                        <span style="color:#121212;">Audit </span>
+                                        <span style="color: #7c3aed;">Log</span>
+                                    </h1>
+                                </div>
+                                <div class="col-md-12 text-center">
+                                    <div class="d-inline-block p-3 shadow-sm" style="background-color:#fff; border-radius:10px">
+                                        <img alt="Audit Log" class="img-fluid" loading="lazy" src="s7.png">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- features -->
+                <div class="tab-pane fade" id="feature" role="tabpanel" aria-labelledby="feature-tab">
+                    <div class="row py-4">
+                        <div class="col-md-6 col-sm-12 p-3">
+                            <div class="d-flex flex-column align-items-start h-100" style="padding:30px; border-radius:12px; background-color:#faf8ff">
+                                <div class="d-flex align-items-center">
+                                    <div class="d-flex align-items-center justify-content-center" style="width:36px; height:36px; border-radius:50%; background-color:#7c3aed; margin-right:10px">
+                                        <i class="fa fa-star" style="color:#fff; font-size:14px"></i>
+                                    </div>
+                                    <p style="color:#1A202C; font-weight:600; font-size:1.2rem; margin-bottom:2px">
+                                        Roles and direct user rules.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-12 p-3">
+                            <div class="d-flex flex-column align-items-start h-100" style="padding:30px; border-radius:12px; background-color:#faf8ff">
+                                <div class="d-flex align-items-center">
+                                    <div class="d-flex align-items-center justify-content-center" style="width:36px; height:36px; border-radius:50%; background-color:#7c3aed; margin-right:10px">
+                                        <i class="fa fa-star" style="color:#fff; font-size:14px"></i>
+                                    </div>
+                                    <p style="color:#1A202C; font-weight:600; font-size:1.2rem; margin-bottom:2px">
+                                        Model access rights with CRUD permissions.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-12 p-3">
+                            <div class="d-flex flex-column align-items-start h-100" style="padding:30px; border-radius:12px; background-color:#faf8ff">
+                                <div class="d-flex align-items-center">
+                                    <div class="d-flex align-items-center justify-content-center" style="width:36px; height:36px; border-radius:50%; background-color:#7c3aed; margin-right:10px">
+                                        <i class="fa fa-star" style="color:#fff; font-size:14px"></i>
+                                    </div>
+                                    <p style="color:#1A202C; font-weight:600; font-size:1.2rem; margin-bottom:2px">
+                                        Export, import, print, archive, share &amp; duplicate controls.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-12 p-3">
+                            <div class="d-flex flex-column align-items-start h-100" style="padding:30px; border-radius:12px; background-color:#faf8ff">
+                                <div class="d-flex align-items-center">
+                                    <div class="d-flex align-items-center justify-content-center" style="width:36px; height:36px; border-radius:50%; background-color:#7c3aed; margin-right:10px">
+                                        <i class="fa fa-star" style="color:#fff; font-size:14px"></i>
+                                    </div>
+                                    <p style="color:#1A202C; font-weight:600; font-size:1.2rem; margin-bottom:2px">
+                                        Menu visibility by role or user.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-12 p-3">
+                            <div class="d-flex flex-column align-items-start h-100" style="padding:30px; border-radius:12px; background-color:#faf8ff">
+                                <div class="d-flex align-items-center">
+                                    <div class="d-flex align-items-center justify-content-center" style="width:36px; height:36px; border-radius:50%; background-color:#7c3aed; margin-right:10px">
+                                        <i class="fa fa-star" style="color:#fff; font-size:14px"></i>
+                                    </div>
+                                    <p style="color:#1A202C; font-weight:600; font-size:1.2rem; margin-bottom:2px">
+                                        Field-level read and write restrictions.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-12 p-3">
+                            <div class="d-flex flex-column align-items-start h-100" style="padding:30px; border-radius:12px; background-color:#faf8ff">
+                                <div class="d-flex align-items-center">
+                                    <div class="d-flex align-items-center justify-content-center" style="width:36px; height:36px; border-radius:50%; background-color:#7c3aed; margin-right:10px">
+                                        <i class="fa fa-star" style="color:#fff; font-size:14px"></i>
+                                    </div>
+                                    <p style="color:#1A202C; font-weight:600; font-size:1.2rem; margin-bottom:2px">
+                                        Record-level visibility by scope (own, team, company, global).</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-12 p-3">
+                            <div class="d-flex flex-column align-items-start h-100" style="padding:30px; border-radius:12px; background-color:#faf8ff">
+                                <div class="d-flex align-items-center">
+                                    <div class="d-flex align-items-center justify-content-center" style="width:36px; height:36px; border-radius:50%; background-color:#7c3aed; margin-right:10px">
+                                        <i class="fa fa-star" style="color:#fff; font-size:14px"></i>
+                                    </div>
+                                    <p style="color:#1A202C; font-weight:600; font-size:1.2rem; margin-bottom:2px">
+                                        Audit log for all permission changes.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-12 p-3">
+                            <div class="d-flex flex-column align-items-start h-100" style="padding:30px; border-radius:12px; background-color:#faf8ff">
+                                <div class="d-flex align-items-center">
+                                    <div class="d-flex align-items-center justify-content-center" style="width:36px; height:36px; border-radius:50%; background-color:#7c3aed; margin-right:10px">
+                                        <i class="fa fa-star" style="color:#fff; font-size:14px"></i>
+                                    </div>
+                                    <p style="color:#1A202C; font-weight:600; font-size:1.2rem; margin-bottom:2px">
+                                        Built-in in-app user guide.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- releases -->
+                <div class="tab-pane fade" id="releases" role="tabpanel" aria-labelledby="releases-tab">
+                    <div class="row pt-5 m-0">
+                        <div class="col-md-3">
+                            <h4 style="font-size:16px; font-weight:600; color:#514F4F; margin:0; line-height:26px;">
+                                Latest Release 18.0.1.0.0
+                            </h4>
+                            <span style="font-size:14px; color:#7A7979; display:block; margin-bottom:20px;">
+                                30th May, 2026
+                            </span>
+                        </div>
+                        <div class="col-md-8">
+                            <div style="padding:0 0 40px">
+                                <div style="margin:0 0 10px">
+                                    <div style="display:inline-block; padding:0px 8px; color:#514F4F; background-color:#FFD8D8; border-radius:20px">
+                                        Add
+                                    </div>
+                                </div>
+                                <div class="d-flex m-0" style="color:#7A7979;">
+                                    <ul class="ps-3 mb-0">
+                                        <li>Initial Commit</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div style="padding:0 0 0; border-bottom:1px solid #E3E3E3"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <div style="width:280px; margin:14px; padding:20px; background:#fff;
-                    border:1px solid #e5e7eb; border-radius:10px;">
-            <h4 style="color:#714B67;">Record Rules</h4>
-            <p style="color:#4b5563;">Limit visibility by scope: own, team, department,
-                company, assigned or global.</p>
-        </div>
-
-        <div style="width:280px; margin:14px; padding:20px; background:#fff;
-                    border:1px solid #e5e7eb; border-radius:10px;">
-            <h4 style="color:#714B67;">Audit Log</h4>
-            <p style="color:#4b5563;">Every permission change is recorded for full
-                traceability and compliance.</p>
-        </div>
-
-        <div style="width:280px; margin:14px; padding:20px; background:#fff;
-                    border:1px solid #e5e7eb; border-radius:10px;">
-            <h4 style="color:#714B67;">Built-in User Guide</h4>
-            <p style="color:#4b5563;">An in-app guide under Access Management explains every
-                feature, right where you work.</p>
-        </div>
-    </div>
-</section>
-
-<section class="oe_container">
-    <h2 style="text-align:center; color:#1f2937; margin-top:48px;">Screenshots</h2>
-    <div class="oe_row" style="max-width:960px; margin:0 auto; text-align:center;">
-        <img src="s1.png"
-             style="max-width:100%; margin:16px 0; border:1px solid #e5e7eb;
-                    border-radius:8px;" alt="Access Rights Studio"/>
-        <img src="s2.png"
-             style="max-width:100%; margin:16px 0; border:1px solid #e5e7eb;
-                    border-radius:8px;" alt="Roles"/>
-        <img src="s3.png"
-             style="max-width:100%; margin:16px 0; border:1px solid #e5e7eb;
-                    border-radius:8px;" alt="User Permissions"/>
-        <img src="s4.png"
-             style="max-width:100%; margin:16px 0; border:1px solid #e5e7eb;
-                    border-radius:8px;" alt="Menu Permissions"/>
-        <img src="s5.png"
-             style="max-width:100%; margin:16px 0; border:1px solid #e5e7eb;
-                    border-radius:8px;" alt="Field Permissions"/>
-        <img src="s6.png"
-             style="max-width:100%; margin:16px 0; border:1px solid #e5e7eb;
-                    border-radius:8px;" alt="Record Rules"/>
-        <img src="s7.png"
-             style="max-width:100%; margin:16px 0; border:1px solid #e5e7eb;
-                    border-radius:8px;" alt="Audit Log"/>
-    </div>
-</section>
-
-<section class="oe_container">
-    <div class="oe_row" style="max-width:760px; margin:48px auto; padding:28px;
-                               background:#714B67; border-radius:12px; text-align:center;">
-        <img src="futurepilot.jpeg" alt="Future Pilot"
-             style="max-height:60px; margin-bottom:12px; border-radius:8px;"/>
-        <h2 style="color:#fff; margin:0;">Future Pilot</h2>
-        <p style="color:#e5d8e2; margin-top:8px;">
-            Need help? Contact our support team.
-        </p>
-        <p style="margin-top:12px;">
+        <!-- support footer -->
+        <div class="position-relative" style="background-color:#0A1425; border-radius: 12px; padding: 3rem 2rem; text-align:center;">
+            <img src="futurepilot.jpeg" alt="Future Pilot"
+                 style="max-height:70px; border-radius:10px; margin-bottom:16px;"/>
+            <h2 style="color:#fff; margin:0;">Future Pilot</h2>
+            <p style="color:#b8c2d9; margin-top:8px;">Need help? Contact our support team.</p>
             <a href="mailto:futurepilot222@gmail.com"
-               style="background:#fff; color:#714B67; padding:10px 22px;
-                      border-radius:24px; text-decoration:none; font-weight:600;">
+               style="background:#7c3aed; color:#fff; padding:10px 24px; border-radius:24px; text-decoration:none; font-weight:600; display:inline-block; margin-top:8px;">
                 futurepilot222@gmail.com
             </a>
-        </p>
+        </div>
     </div>
-</section>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
