@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_access_button_rule_tree" model="ir.ui.view">
+        <field name="name">access.button.rule.tree</field>
+        <field name="model">access.button.rule</field>
+        <field name="arch" type="xml">
+            <list string="Button Rules" editable="bottom">
+                <field name="role_id"/>
+                <field name="model_id"/>
+                <field name="button_name"/>
+                <field name="label"/>
+                <field name="hide"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_access_button_rule_search" model="ir.ui.view">
+        <field name="name">access.button.rule.search</field>
+        <field name="model">access.button.rule</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="role_id"/>
+                <field name="model_id"/>
+                <field name="button_name"/>
+                <filter string="Hidden" name="filter_hidden" domain="[('hide', '=', True)]"/>
+                <group expand="0" string="Group By">
+                    <filter string="Role" name="group_role" context="{'group_by': 'role_id'}"/>
+                    <filter string="Model" name="group_model" context="{'group_by': 'model_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_access_button_rule" model="ir.actions.act_window">
+        <field name="name">Button Permissions</field>
+        <field name="res_model">access.button.rule</field>
+        <field name="view_mode">list</field>
+        <field name="search_view_id" ref="view_access_button_rule_search"/>
+    </record>
+</odoo>

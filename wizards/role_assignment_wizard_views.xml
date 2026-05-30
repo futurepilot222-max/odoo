@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_access_role_assignment_wizard_form" model="ir.ui.view">
+        <field name="name">access.role.assignment.wizard.form</field>
+        <field name="model">access.role.assignment.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Assign Roles">
+                <sheet>
+                    <group>
+                        <field name="operation" widget="radio"/>
+                        <field name="role_ids" widget="many2many_tags"/>
+                        <field name="user_ids" widget="many2many_tags"/>
+                    </group>
+                </sheet>
+                <footer>
+                    <button name="action_apply" string="Apply" type="object" class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_access_role_assignment_wizard" model="ir.actions.act_window">
+        <field name="name">Assign Roles to Users</field>
+        <field name="res_model">access.role.assignment.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+</odoo>

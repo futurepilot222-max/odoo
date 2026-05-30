@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_access_audit_log_tree" model="ir.ui.view">
+        <field name="name">access.audit.log.tree</field>
+        <field name="model">access.audit.log</field>
+        <field name="arch" type="xml">
+            <list string="Audit Log" create="false" edit="false" delete="false"
+                  default_order="create_date desc">
+                <field name="create_date" string="Date"/>
+                <field name="user_id"/>
+                <field name="action"/>
+                <field name="model_name"/>
+                <field name="record_id"/>
+                <field name="record_name"/>
+                <field name="field_name"/>
+                <field name="old_value"/>
+                <field name="new_value"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_access_audit_log_form" model="ir.ui.view">
+        <field name="name">access.audit.log.form</field>
+        <field name="model">access.audit.log</field>
+        <field name="arch" type="xml">
+            <form string="Audit Entry" create="false" edit="false">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="create_date" string="Date"/>
+                            <field name="user_id"/>
+                            <field name="action"/>
+                        </group>
+                        <group>
+                            <field name="model_name"/>
+                            <field name="record_id"/>
+                            <field name="record_name"/>
+                            <field name="field_name"/>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="old_value"/>
+                        <field name="new_value"/>
+                        <field name="notes"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_access_audit_log_search" model="ir.ui.view">
+        <field name="name">access.audit.log.search</field>
+        <field name="model">access.audit.log</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="user_id"/>
+                <field name="model_name"/>
+                <field name="record_name"/>
+                <field name="action"/>
+                <filter string="Today" name="today"
+                        domain="[('create_date', '&gt;=', (context_today()).strftime('%Y-%m-%d'))]"/>
+                <filter string="Last 7 Days" name="last_week"
+                        domain="[('create_date', '&gt;=', (context_today() - datetime.timedelta(days=7)).strftime('%Y-%m-%d'))]"/>
+                <group expand="0" string="Group By">
+                    <filter string="User" name="group_user" context="{'group_by': 'user_id'}"/>
+                    <filter string="Model" name="group_model" context="{'group_by': 'model_name'}"/>
+                    <filter string="Action" name="group_action" context="{'group_by': 'action'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_access_audit_log" model="ir.actions.act_window">
+        <field name="name">Audit Log</field>
+        <field name="res_model">access.audit.log</field>
+        <field name="view_mode">list,form</field>
+        <field name="search_view_id" ref="view_access_audit_log_search"/>
+    </record>
+</odoo>

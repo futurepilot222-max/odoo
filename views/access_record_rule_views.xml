@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_access_record_rule_tree" model="ir.ui.view">
+        <field name="name">access.record.rule.tree</field>
+        <field name="model">access.record.rule</field>
+        <field name="arch" type="xml">
+            <list string="Record Rules">
+                <field name="role_id"/>
+                <field name="model_id"/>
+                <field name="rule_type"/>
+                <field name="perm_read"/>
+                <field name="perm_write"/>
+                <field name="perm_create"/>
+                <field name="perm_unlink"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_access_record_rule_form" model="ir.ui.view">
+        <field name="name">access.record.rule.form</field>
+        <field name="model">access.record.rule</field>
+        <field name="arch" type="xml">
+            <form string="Record Rule">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="role_id"/>
+                            <field name="model_id"/>
+                            <field name="rule_type"/>
+                            <field name="custom_domain" required="rule_type == 'custom'" invisible="rule_type != 'custom'"/>
+                        </group>
+                        <group>
+                            <field name="perm_read"/>
+                            <field name="perm_write"/>
+                            <field name="perm_create"/>
+                            <field name="perm_unlink"/>
+                            <field name="ir_rule_id" readonly="1"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_access_record_rule" model="ir.actions.act_window">
+        <field name="name">Record Rules</field>
+        <field name="res_model">access.record.rule</field>
+        <field name="view_mode">list,form</field>
+    </record>
+</odoo>
