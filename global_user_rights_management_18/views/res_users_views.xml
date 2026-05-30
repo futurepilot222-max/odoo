@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_users_form_inherit_gurm" model="ir.ui.view">
+        <field name="name">res.users.form.inherit.gurm</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="base.view_users_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page string="Access Roles" name="access_roles">
+                    <group>
+                        <field name="role_ids" widget="many2many_tags"/>
+                    </group>
+                    <separator string="Direct Model Permissions (User Rules)"/>
+                    <field name="user_rule_ids" context="{'default_user_id': id}">
+                        <list editable="bottom">
+                            <field name="model_id"/>
+                            <field name="perm_read"/>
+                            <field name="perm_write"/>
+                            <field name="perm_create"/>
+                            <field name="perm_unlink" string="Delete"/>
+                            <field name="note"/>
+                        </list>
+                    </field>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

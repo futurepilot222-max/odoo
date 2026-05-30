@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="menu_access_root"
+              name="Access Management"
+              sequence="20"
+              groups="group_access_user"/>
+
+    <menuitem id="menu_access_roles"
+              name="Roles"
+              parent="menu_access_root"
+              action="action_access_role"
+              sequence="10"/>
+
+    <menuitem id="menu_access_user_rules"
+              name="User Permissions"
+              parent="menu_access_root"
+              action="action_access_user_rule"
+              sequence="20"/>
+
+    <menuitem id="menu_access_menu_rules"
+              name="Menu Permissions"
+              parent="menu_access_root"
+              action="action_access_menu_rule"
+              sequence="30"/>
+
+    <menuitem id="menu_access_field_rules"
+              name="Field Permissions"
+              parent="menu_access_root"
+              action="action_access_field_rule"
+              sequence="40"/>
+
+    <menuitem id="menu_access_button_rules"
+              name="Button Permissions"
+              parent="menu_access_root"
+              action="action_access_button_rule"
+              sequence="45"/>
+
+    <menuitem id="menu_access_record_rules"
+              name="Record Rules"
+              parent="menu_access_root"
+              action="action_access_record_rule"
+              sequence="50"/>
+
+    <menuitem id="menu_access_assign_wizard"
+              name="Assign Roles"
+              parent="menu_access_root"
+              action="action_access_role_assignment_wizard"
+              sequence="60"
+              groups="group_access_manager"/>
+
+    <menuitem id="menu_access_audit_log"
+              name="Audit Log"
+              parent="menu_access_root"
+              action="action_access_audit_log"
+              sequence="70"/>
+</odoo>
